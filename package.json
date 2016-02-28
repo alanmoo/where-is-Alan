@@ -1,0 +1,39 @@
+{
+  "name": "where-is-alan",
+  "version": "1.0.0",
+  "description": "Where in the world is Alan Moo?",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev" : "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alanmoo/wheresalan.git"
+  },
+  "keywords": [
+    "foursquare"
+  ],
+  "author": "Alan Mooiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alanmoo/wheresalan/issues"
+  },
+  "homepage": "https://github.com/alanmoo/wheresalan#readme",
+  "dependencies": {
+    "body-parser": "~1.13.2",
+    "cookie-parser": "~1.3.5",
+    "debug": "~2.2.0",
+    "dotenv": "^2.0.0",
+    "express": "~4.13.1",
+    "jade": "~1.11.0",
+    "morgan": "~1.6.1",
+    "request": "^2.67.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.11.1"
+  }
+}

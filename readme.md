@@ -1,0 +1,1 @@
+A basic Express app to pull my latest checkin from Swarm (FourSquare) and show the city I'm in.
