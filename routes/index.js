@@ -7,7 +7,11 @@ require('dotenv').load();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     function render() {
-      res.render('index', { title: `${this.city}, ${this.state}`});
+      if(this.category === "Plane"){
+        res.render('plane', {name: `${this.name}`});
+      } else {
+        res.render('index', { title: `${this.city}, ${this.state}`});
+      }
     }
     
 	https.get({
@@ -23,8 +27,11 @@ router.get('/', function(req, res, next) {
       
       res.on('end', (d)=>{
           var parsed = JSON.parse(body);
-          this.city = parsed.response.checkins.items[0].venue.location.city;
-          this.state = parsed.response.checkins.items[0].venue.location.state;
+          var currentCheckin = parsed.response.checkins.items[0];
+          this.name = currentCheckin.venue.name;
+          this.category = currentCheckin.venue.categories[0].name;
+          this.city = currentCheckin.venue.location.city;
+          this.state = currentCheckin.venue.location.state;
           render();
       });
 
